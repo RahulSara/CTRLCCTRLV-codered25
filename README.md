@@ -9,9 +9,9 @@ Divided into 2 major modes; Input and Output, the main focus of the project is t
 ### Features
 ### *Modes*
 
-**Input Mode**: Allows users to interact with the system using voice commands or tactile inputs.
+**Indoor Mode**: Allows users to interact with the system using voice commands or tactile inputs.
 
-**Output Mode**: Provides auditory and/or tactile feedback to the user based on the detected hazards and navigation instructions.
+**Outdoor Mode**: Provides auditory and/or tactile feedback to the user based on the detected hazards and navigation instructions.
 
 ### *Functionalities*
 
@@ -25,3 +25,10 @@ Divided into 2 major modes; Input and Output, the main focus of the project is t
 
 Smart glasses with camera and microphone capabilities.
 Compatible with devices supporting YOLO v8 model and Mapbox API.
+
+
+
+
+
+
+
