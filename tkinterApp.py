@@ -18,24 +18,8 @@ def toggle_power():
 
 # Function to enable/disable controls
 def set_controls_state(state):
-    indoor_button.config(state=state)
-    outdoor_button.config(state=state)
+    scale.config(state=state)
     additional_button.config(state=state)
-
-# Function to handle Indoor button click
-def set_indoor():
-    label.config(text="Indoor")
-    indoor_button.config(state='disabled')
-    outdoor_button.config(state='normal')
-    run_indoor_nav_script()
-    stop_all_processes()  # Ensure outdoor scripts are stopped
-
-# Function to handle Outdoor button click
-def set_outdoor():
-    label.config(text="Outdoor")
-    indoor_button.config(state='normal')
-    outdoor_button.config(state='disabled')
-    run_outdoor_and_hazard_scripts()
 
 # Function to stop all running processes
 def stop_all_processes():
@@ -59,10 +43,21 @@ def run_outdoor_and_hazard_scripts():
 
 # Function to run IndoorYolov8.py script
 def run_indoor_nav_script():
+    global navigation_process
+    stop_all_processes()  # Ensure no scripts are already running
     try:
-        subprocess.run(["python", "IndoorIntegrated.py"], check=True)
-    except subprocess.CalledProcessError as e:
+        navigation_process = subprocess.Popen(["python", "IndoorIntegrated.py"])
+    except Exception as e:
         messagebox.showerror("Error", f"Failed to run IndoorYolov8.py: {str(e)}")
+
+# Function for slider change
+def on_slider_change(value):
+    if value == '1':
+        label.config(text="Indoor")
+        run_indoor_nav_script()
+    elif value == '2':
+        label.config(text="Outdoor")
+        run_outdoor_and_hazard_scripts()
 
 # Function for the Voice activation button
 def additional_function():
@@ -76,19 +71,15 @@ def on_closing():
 # Create the main window
 root = tk.Tk()
 root.title("visualEYEze")
-root.geometry("300x200")
+root.geometry("300x300")
 
 # Power button
 power_button = tk.Button(root, text="Power ON", bg='green', command=toggle_power)
 power_button.pack(pady=10)
 
-# Indoor button
-indoor_button = tk.Button(root, text="Indoor", command=set_indoor)
-indoor_button.pack(pady=10)
-
-# Outdoor button
-outdoor_button = tk.Button(root, text="Outdoor", command=set_outdoor)
-outdoor_button.pack(pady=10)
+# Slider to select mode
+scale = tk.Scale(root, from_=1, to=2, orient="horizontal", tickinterval=1, command=on_slider_change, label="Select Mode")
+scale.pack(pady=10)
 
 # Label to display current state
 label = tk.Label(root, text="State")
