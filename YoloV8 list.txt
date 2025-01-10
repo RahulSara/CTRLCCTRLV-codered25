@@ -1,0 +1,19 @@
+Person
+
+Vehicles: bicycles, cars, motorcycles, airplanes, buses, trains, trucks, and boats.
+
+Outdoor Objects: traffic lights, fire hydrants, stop signs, parking meters, and benches.
+
+Animals: birds, cats, dogs, horses, sheep, cows, elephants, bears, zebras, and giraffes.
+
+Sports and Entertainment: frisbees, skis, snowboards, sports balls, kites, baseball bats, baseball gloves, skateboards, surfboards, and tennis rackets.
+
+Kitchen and Dining: bottles, wine glasses, cups, forks, knives, spoons, and bowls, are recognizable.
+
+Food:  bananas, apples, sandwiches, oranges, broccoli, carrots, hot dogs, pizzas, donuts, and cakes.
+
+Household Objects: chairs, couches, potted plants, beds, dining tables, and toilets.
+
+Electronics: TVs, laptops, mice, remotes, keyboards, and cell phones.
+
+Accessories: clocks, vases, scissors, teddy bears, hair driers, and toothbrushes.
