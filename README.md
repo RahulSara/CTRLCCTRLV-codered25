@@ -15,7 +15,7 @@ Divided into 2 major modes; Input and Output, the main focus of the project is t
 
 ### *Functionalities*
 
-**Hazard Detection**: Uses YOLO v8 for real-time object detection to identify potential hazards in the user's environment, such as obstacles or traffic.
+**Hazard Detection**: Uses YOLO v8 for real-time object detection to identify potential hazards in the user's environment, such as obstacles or traffic .
 
 **Navigation**: Integrates Mapbox Navigation API to provide turn-by-turn directions and location-based information to help users navigate safely.
 
